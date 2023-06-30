@@ -16,9 +16,12 @@ const ItemCount = () => {
 
   return (
     <>
-      <button onClick={incrementar}>+</button>
-      <p>{contador}</p>
-      <button onClick={decrementar}>-</button>
+
+      <p className="contador">
+        <button className="botones" onClick={decrementar}>-</button>
+          
+        <button className="botones"  onClick={incrementar}>+</button>
+      </p>
     </>
   );
 };

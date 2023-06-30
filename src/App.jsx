@@ -4,22 +4,24 @@ import ItemListContainer from "./Componentes/ItemListContainer/ItemListContainer
 import Header from "./Componentes/NavBar-Header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-// import TituloPrincipal from "./Componentes/TituloPrincipal/TituloPrincipal";
+import ItemDetailContainer from "./Componentes/ItemDetailContaniner/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  // Se escribe la parte logica.
-
-  // En le return vamos a retornar la interfaz del usuario.
   return (
     <>
-      <div className="background">
+      <BrowserRouter>
         <Header />
-        <ItemListContainer
-          greeting={
-            "Aquí encontrarás una amplia selección de productos de alta calidad, diseñados para satisfacer tus necesidades y superar tus expectativas. Nuestro equipo está dedicado a brindarte una experiencia de compra excepcional, con opciones de entrega rápidas y seguras, atención al cliente de primer nivel y ofertas irresistibles. Explora nuestro catálogo, descubre promociones exclusivas y déjanos sorprenderte con nuestro compromiso de calidad."
-          }
-        />
-      </div>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route
+            path="/categoria/:idCategoria"
+            element={<ItemListContainer />}
+          />
+          <Route path="/item/:idItem" element={<ItemDetailContainer />} />
+          <Route path="*" element={<h2>sitio en construccion</h2>} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

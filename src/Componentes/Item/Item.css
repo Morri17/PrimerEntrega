@@ -1,4 +1,3 @@
-.Container {
-  display: flex;
-  flex-wrap: wrap;
+.container {
+  display: flex !important;
 }
